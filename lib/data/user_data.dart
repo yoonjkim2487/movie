@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:untitled1/data/res/RES_L001.dart';
 import 'package:untitled1/data/req/REQ_L001.dart';
 import 'package:http/http.dart' as http;
 
@@ -64,7 +63,7 @@ class UserData {
 
   Future<void> deleteAccount(String userId) async {
     final response = await http.delete(
-      Uri.parse('$baseUrl/delete/$userId'),
+      Uri.parse('$baseUrl/$userId'),
       headers: {
         'Content-Type': 'application/json',
       },
