@@ -63,7 +63,7 @@ class UserData {
 
   Future<void> deleteAccount(String userId) async {
     final response = await http.delete(
-      Uri.parse('$baseUrl/$userId'),
+      Uri.parse('$baseUrl/delete/$userId'),
       headers: {
         'Content-Type': 'application/json',
       },
