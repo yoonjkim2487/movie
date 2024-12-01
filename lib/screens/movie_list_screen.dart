@@ -176,41 +176,43 @@ class _MovieListScreenState extends State<MovieListScreen> {
                   }
                   return true;
                 },
-                child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 200.0,
-                    childAspectRatio: 2 / 3, // 너비 대비 높이를 조정하여 비율을 설정
-                  ),
-                  itemCount: _movies.length,
-                  itemBuilder: (context, index) {
-                    final movie = _movies[index];
-                    return Container(
-                      padding: EdgeInsets.all(0),
-                      child: MovieCard(
-                        title: movie.title,
-                        image: Image.network(
-                          'https://image.tmdb.org/t/p/w500${movie.posterPath}',
-                          fit: BoxFit.contain,
-                          errorBuilder: (context, error, stackTrace) {
-                            return Icon(Icons.error);
+                child: Center(
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 200.0,
+                      childAspectRatio: 2 / 3, // 너비 대비 높이를 조정하여 비율을 설정
+                    ),
+                    itemCount: _movies.length,
+                    itemBuilder: (context, index) {
+                      final movie = _movies[index];
+                      return Container(
+                        padding: EdgeInsets.all(0),
+                        child: MovieCard(
+                          title: movie.title,
+                          image: Image.network(
+                            'https://image.tmdb.org/t/p/w500${movie.posterPath}',
+                            fit: BoxFit.contain,
+                            errorBuilder: (context, error, stackTrace) {
+                              return Icon(Icons.error);
+                            },
+                          ),
+                          releaseInfo:
+                          '${movie.releaseDate} · ${movie.originalLanguage}',
+                          movieId: movie.id,
+                          // 영화 ID 전달
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    MovieDetailScreen(movieId: movie.id),
+                              ),
+                            );
                           },
                         ),
-                        releaseInfo:
-                        '${movie.releaseDate} · ${movie.originalLanguage}',
-                        movieId: movie.id,
-                        // 영화 ID 전달
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  MovieDetailScreen(movieId: movie.id),
-                            ),
-                          );
-                        },
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
               ),
             ),
