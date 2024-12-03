@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import '../model/movie_watch_history.dart';
 
 class MovieWatchHistoryData {
-  final String baseUrl = 'http://3.37.239.121:8080/api/movie-watch-histories';
+  final String baseUrl = 'https://contentspick.site/api/movie-watch-histories';
 
   Future<List<MovieWatchHistory>> fetchMovieWatchHistories(String userId) async {
     final response = await http.get(Uri.parse('$baseUrl/user/$userId'));

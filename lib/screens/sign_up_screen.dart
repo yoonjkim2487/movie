@@ -172,7 +172,7 @@ class SignUpScreen extends StatelessWidget {
       );
       try {
         final response = await http.post(
-          Uri.parse('http://3.37.239.121:8080/api/users'), // API URL
+          Uri.parse('https://contentspick.site/api/users'), // API URL
           headers: {'Content-Type': 'application/json'},
           body: json.encode({
             'id': reqL001.id,

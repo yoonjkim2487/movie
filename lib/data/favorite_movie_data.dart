@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import '../model/favorite_movie_model.dart';
 
 class FavoriteMovieData {
-  final String baseUrl = 'http://3.37.239.121:8080/api/movie-favorite-lists';
+  final String baseUrl = 'https://contentspick.site/api/movie-favorite-lists';
 
 
   Future<List<FavoriteMovie>> fetchFavoriteMovies(String userId) async {

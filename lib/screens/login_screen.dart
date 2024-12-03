@@ -138,7 +138,7 @@ class LoginScreen extends StatelessWidget {
   Future<Map<String, dynamic>?> loginUser(String id, String password) async {
     try {
       final response = await http.post(
-        Uri.parse('http://3.37.239.121:8080/api/users/login'), // 로그인 API URL
+        Uri.parse('https://contentspick.site/api/users/login'), // 로그인 API URL
         headers: {'Content-Type': 'application/json'},
         body: json.encode({
           'id': id, // 사용자가 입력한 ID

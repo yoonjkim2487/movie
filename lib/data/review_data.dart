@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import '../model/review_model.dart';
 
 class MovieReviewData {
-  final String baseUrl = 'http://3.37.239.121:8080/api/movie-reviews';
+  final String baseUrl = 'https://contentspick.site/api/movie-reviews';
 
   Future<List<MovieReview>> fetchAllReviews() async {
     final response = await http.get(Uri.parse(baseUrl));

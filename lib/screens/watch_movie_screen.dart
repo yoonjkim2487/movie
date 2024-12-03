@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../SharedPreference.dart';
 import '../constants/colors.dart';
 import '../data/movie_data.dart';
 import '../data/movie_watch_history_data.dart';

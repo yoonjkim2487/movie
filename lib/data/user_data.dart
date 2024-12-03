@@ -6,7 +6,7 @@ import '../uiState/profile/User.dart';
 
 class UserData {
   // TODO 백엔드 서버  로그인 API domain으로 변경
-  final String baseUrl ='http://3.37.239.121:8080/api/users';
+  final String baseUrl ='https://contentspick.site/api/users';
 
   //TODO 로그인 메소드
   Future<User> login(REQ_L001 reqL001) async {
