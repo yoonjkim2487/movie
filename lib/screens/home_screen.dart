@@ -185,7 +185,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SizedBox(height: 16), // 한줄평 섹션과 추천 섹션 간의 간격 추가
-              SubTitle(title: '당신을 위한 추천'),
+              SubTitle(title: '당신을 위한 추천콘텐츠'),
               SizedBox(
                 height: 150,
                 child: ListView.builder(
@@ -197,7 +197,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: RecommendationCard(
                         imageUrl: 'https://via.placeholder.com/216x122',
                         impressiveQuote: '인상적인 대사',
-                        briefContent: '이 영화는 정말 대단합니다!',
+                        briefContent: 'gkqsl!',
                         onTap: () {},
                       ),
                     );

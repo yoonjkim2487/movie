@@ -106,4 +106,26 @@ class MovieData {
       throw Exception("Failed to load cast details");
     }
   }
+
+  Future<List<MovieModel>> fetchTrendingMovies({int? pageCount}) async {
+    int pages = pageCount ?? defaultPageCount;
+    List<MovieModel> trendingMovies = [];
+    for (int i = 1; i <= pages; i++) {
+      final response = await http.get(
+        Uri.parse('https://api.themoviedb.org/3/trending/movie/day?language=ko-KR&page=$i'),
+        headers: {
+          'Authorization': 'Bearer $bearerToken',
+          'accept': 'application/json',
+        },
+      );
+      if (response.statusCode == 200) {
+        trendingMovies.addAll(((jsonDecode(response.body)['results']) as List)
+            .map((e) => MovieModel.fromJson(e))
+            .toList());
+      } else {
+        throw Exception("Failed to load trending movies");
+      }
+    }
+    return trendingMovies;
+  }
 }
