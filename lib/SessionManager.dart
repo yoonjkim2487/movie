@@ -49,7 +49,7 @@ class SessionManager {
     final userId = SharePrefManager.getUserId();
     if (userId != null) {
       final response = await http.get(
-        Uri.parse('http://3.37.239.121:8080/api/users/$userId'),
+        Uri.parse('https://contentspick.site/api/users/$userId'),
       );
 
       if (response.statusCode == 200) {
