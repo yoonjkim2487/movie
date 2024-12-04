@@ -61,9 +61,10 @@ class MovieReviewData {
       List<dynamic> data = json.decode(utf8.decode(response.bodyBytes));
       return data.map((json) => MovieReview.fromJson(json)).toList();
     } else {
-      throw Exception('Failed to load reviews by rating');
+      throw Exception('Failed to load reviews by upvotes');
     }
   }
+
 
 
   Future<MovieReview?> createOrUpdateReview(MovieReview movieReview) async {
